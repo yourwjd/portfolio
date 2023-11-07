@@ -1,0 +1,270 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Noto+Sans+KR&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    font-family: 'Pretendard-Regular';
+}
+.wrap{
+    margin: 0 100px;
+}
+section{
+    /* border: solid 1px #000; */
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.bold{
+    font-weight: 700;
+}
+#main p{
+    margin-bottom: -100px;
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 280px;
+    color: #fff;
+    text-shadow: -3.5px 0px #000, 0px 3.5px #000, 3.5px 0px #000, 0px -3.5px #000;
+}
+#main p:nth-child(1){
+    margin-top: 70px;
+}
+
+#introduce{
+    margin-top: 300px;
+    text-align: center;
+}
+#introduce h2, h3{
+    font-size: 50px;
+}
+#introduce h3{
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+#introduce h2{
+    margin-bottom: 15px;
+}
+#introduce h1{
+    margin: 30px 0 70px 0;
+    font-size: 80px;
+}
+#skill li{
+    display: inline-block;
+    margin: 10px 15px;
+    padding: 10px 15px;
+    font-size: 20px;
+    border: solid 1px #000;
+    border-radius: 50px;
+}
+
+#pj-banner{
+    margin: 200px 0 400px 0;
+}
+#pj-banner h3{
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 35px;
+    font-size: 90px;
+    font-weight: 300;
+    color: #fff;
+    text-shadow: -2px 0px #000, 0px 2px #000, 2px 0px #000, 0px -2px #000;
+}
+#pj-banner article{
+    overflow: hidden;
+    white-space: nowrap;
+}
+#pj-banner img{
+    width: 430px;
+    height: 250px;
+    margin: 0 50px;
+    border: solid 1px #000;
+}
+#pj-banner p{
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 45px;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+#pj{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+#pj img{
+    width: 750px;
+    height: 705px;
+    border: solid 1px #000;
+}
+#date{
+    margin-top: 60px;
+}
+#pj h1{
+    margin-bottom: 55px;
+    font-size: 70px;
+}
+#pj p{
+    font-size: 20px;
+}
+#right{
+    display: flex;
+    justify-content: space-between;
+}
+#explanation{
+    margin: 40px 0 60px 0;
+    width: 705px;
+    font-weight: 400;
+}
+#pj button{
+    margin-right: 30px;
+    padding: 10px 40px;
+    font-size: 20px;
+    background: #fff;
+    border: solid 1px #000;
+    border-radius: 50px;
+}
+#bar{
+    margin-left: 70px;
+}
+#bar span{
+    position: absolute;
+    right: 100px;
+    display: inline-block;
+    width: 20px;
+    border-radius: 50px;
+}
+#bar :nth-child(1){
+    height: 480px;
+    background: #d9d9d9;
+}
+#bar :nth-child(2){
+    height: 160px;
+    background: #000;
+}
+#resume{
+    margin: 200px 0 130px 0;
+}
+#resume div{
+    display: flex;
+    align-items: center;
+}
+#resume h2{
+    font-size: 100px;
+    margin-right: 50px;
+}
+#resume div>img{
+    width: 100px;
+    height: 100px;
+}
+#resume ul{
+    margin-top: 50px;
+    text-align: center;
+}
+#resume li{
+    display: inline-block;
+    width: 550px;
+    height: 573px;
+    border: solid 5px #000;
+}
+#resume li img{
+    margin-top: 45px;
+}
+#contact{
+    margin: 300px 0 40px 0;
+}
+#contact ul{
+    margin: 0 100px;
+}
+#contact li{
+    display: inline-block;
+    margin-right: 50px;
+    padding: 10px 50px;
+    font-size: 20px;
+    border: solid 1px #000;
+    border-radius: 50px;
+}
+#contact p{
+    margin: 50px 100px 0 100px;
+    font-size: 30px;
+}
+#contact p span{
+    display: inline-block;
+    margin-right: 13px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    background-color: #33FF00;
+}
+#mail{
+    display: flex;
+    align-items: center;
+    margin: 0 100px;
+}
+#mail h1{
+    font-size: 144px;
+    margin-right: 50px;
+    background-image: linear-gradient(45deg, #FF4A81 0%, #FAFF00 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+    /* text-shadow: -5px 0px #ffe60044, 0px 5px #ffe60044, 5px 0px #ffe60044, 0px -5px #ffe60044; */
+}
+#mail img{
+    width: 100px;
+    height: 100px;
+}
+#contact h2{
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 170px;
+    font-size: 90px;
+    color: #fff;
+    text-shadow: -2px 0px #000, 0px 2px #000, 2px 0px #000, 0px -2px #000;
+}
+#copyright{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 100px;
+    border: solid 1px #000;
+}
+#copyright p{
+    margin: 0 5px 0 100px;
+    font-size: 20px;
+    color: #A9A9A9;
+}
+#copyright img{
+    height: 24px;
+}
+
+
+/*-----------scroll-----------*/
+#scroll{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 50%;
+    top: 100%;
+    padding: 50px 100px 150px 100px;
+    border: solid 1px #909090;
+    border-radius: 1000px;
+    transform: translate(-45%, -50%);
+}
+#scroll p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
