@@ -13,9 +13,7 @@ body{
     position: relative;
     font-family: 'Pretendard-Regular';
 }
-.wrap{
-    margin: 0 calc(100vw * 100 / 1920);
-}
+
 li{
     list-style: none;
 }
@@ -26,6 +24,35 @@ a{
 .bold{
     font-weight: 700;
 }
+
+.wrap{
+    margin: 0 calc(100vw * 100 / 1920);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 calc(100vw * 10 / 1920);
+    width: calc(100vw * 1700 / 1920);
+    height: calc(100vw * 100 / 1920);
+    border-bottom: calc(100vw * 2 / 1920) solid #000;
+}
+header h3{
+    font-size: calc(100vw * 30 / 1920);
+}
+header ul{
+    width: 12%;
+}
+header li{
+    display: inline-block;
+    margin-left: 5%;
+    font-size: calc(100vw * 20 / 1920);
+
+}
+
 #main p{
     margin-bottom: calc(100vw * -100 / 1920);
     text-align: center;
@@ -73,9 +100,9 @@ a{
     white-space: nowrap;
     margin-bottom: calc(100vw * 35 / 1920);
     font-size: calc(100vw * 90 / 1920);
-    font-weight: 300;
-    color: #fff;
-    text-shadow: calc(100vw * -2 / 1920) 0 #000, 0 calc(100vw * 2 / 1920) #000, calc(100vw * 2 / 1920) 0 #000, 0 calc(100vw * -2 / 1920) #000;
+    font-weight: 900;
+    color: #000;
+    /* text-shadow: calc(100vw * -2 / 1920) 0 #000, 0 calc(100vw * 2 / 1920) #000, calc(100vw * 2 / 1920) 0 #000, 0 calc(100vw * -2 / 1920) #000; */
 }
 #pj-banner article{
     overflow: hidden;
@@ -96,15 +123,32 @@ a{
 }
 
 #index{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: calc(100vw * 100 / 1920);
     width: 100%;
     height: calc(100vw * 70 / 1920);
     background: #d9d9d9;
 }
+#index li{
+    margin: 1% 0 0 1%;
+    width: 20%;
+    height: calc(100vw * 50 / 1920);
+    font-size: calc(100vw * 20 / 1920);
+}
+#index span{
+    margin-right: 4%;
+    font-size: calc(100vw * 30 / 1920);
+    font-weight: 600;
+}
 #index .active{
     position: relative;
+    margin: 0;
+    padding: 1% 0 0 1%;
     width: 20%;
-    height: calc(100vw * 70 / 1920);
+    height: calc(100vw * 50 / 1920);
+    color: #fff;
     background: #000;
 }
 #index .active::after{
@@ -172,8 +216,8 @@ a{
     position: absolute;
     right: calc(100vw * 100 / 1920);
     display: inline-block;
-    width: calc(100vw * 20 / 1920);
-    border-radius: calc(100vw * 50 / 1920);
+    width: calc(100vw * 15 / 1920);
+    border-radius: calc(100vw * 3 / 1920);
 }
 .bar :nth-child(1){
     height: calc(100vw * 480 / 1920);
