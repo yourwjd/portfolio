@@ -35,21 +35,25 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 calc(100vw * 10 / 1920);
-    width: calc(100vw * 1700 / 1920);
-    height: calc(100vw * 100 / 1920);
-    border-bottom: calc(100vw * 2 / 1920) solid #000;
+    width: 100%;
+    height: calc(100vw * 70 / 1920);
+    background: #fff;
+    border-bottom: calc(100vw * 1.5 / 1920) solid #000;
+    z-index: 10;
 }
 header h3{
-    font-size: calc(100vw * 30 / 1920);
+    padding-left: calc(100vw * 50 / 1920);
+    font-size: calc(100vw * 25 / 1920);
 }
 header ul{
-    width: 12%;
+    padding-right: calc(100vw * 50 / 1920);
+    width: 50%;
+    text-align: right;
 }
 header li{
     display: inline-block;
-    margin-left: 5%;
-    font-size: calc(100vw * 20 / 1920);
+    margin-left: 7%;
+    font-size: calc(100vw * 18 / 1920);
 
 }
 
@@ -59,15 +63,20 @@ header li{
     font-family: 'Inter';
     font-size: calc(100vw * 280 / 1920);
     color: #fff;
-    text-shadow: calc(100vw * -3.5 / 1920) 0 #000, 0 calc(100vw * 3.5 / 1920) #000, calc(100vw * 3.5 / 1920) 0 #000, 0 calc(100vw * -3.5 / 1920) #000;
+    -webkit-text-stroke: calc(100vw * 3.5 / 1920) black;
+    /* text-shadow: calc(100vw * -3.5 / 1920) 0 #000, 0 calc(100vw * 3.5 / 1920) #000, calc(100vw * 3.5 / 1920) 0 #000, 0 calc(100vw * -3.5 / 1920) #000; */
 }
 #main p:nth-child(1){
-    margin-top: calc(100vw * 70 / 1920);
+    margin-top: calc(100vw * 30 / 1920);
 }
 
 #introduce{
     margin-top: calc(100vw * 300 / 1920);
+    padding-top: calc(100vw * 300 / 1920);
+    height: calc(100vw * 900 / 1920);
     text-align: center;
+    background: #000;
+    color: #fff
 }
 #introduce h2, h3{
     font-size: calc(100vw * 50 / 1920);
@@ -88,41 +97,48 @@ header li{
     margin: calc(100vw * 10 / 1920) calc(100vw * 15 / 1920);
     padding: calc(100vw * 10 / 1920) calc(100vw * 15 / 1920);
     font-size: calc(100vw * 20 / 1920);
-    border: solid calc(100vw * 1 / 1920) #000;
+    border: solid calc(100vw * 1 / 1920) #fff;
     border-radius: calc(100vw * 50 / 1920);
 }
 
-#pj-banner{
-    margin: calc(100vw * 200 / 1920) 0 calc(100vw * 300 / 1920) 0;
+#gallery{
+    padding-top: calc(100vw * 1920 / 1920);
+    width: 100%;
+    height: calc(100vw * 3500 / 1920);
+    background-image: url(./img/projects.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
-#pj-banner h3{
-    overflow: hidden;
-    white-space: nowrap;
-    margin-bottom: calc(100vw * 35 / 1920);
-    font-size: calc(100vw * 90 / 1920);
-    font-weight: 900;
-    color: #000;
-    /* text-shadow: calc(100vw * -2 / 1920) 0 #000, 0 calc(100vw * 2 / 1920) #000, calc(100vw * 2 / 1920) 0 #000, 0 calc(100vw * -2 / 1920) #000; */
+#gallery article{
+    position: relative;
+    margin: 0 calc(100vw * 100 / 1920);
 }
-#pj-banner article{
-    overflow: hidden;
-    white-space: nowrap;
+#gallery article img{
+    position: absolute;
+    width: 50%;
 }
-#pj-banner img{
-    width: calc(100vw * 430 / 1920);
-    height: calc(100vw * 250 / 1920);
-    margin: 0 calc(100vw * 50 / 1920);
-    border: solid calc(100vw * 1 / 1920) #000;
+#gallery article img:nth-child(2){
+    top: calc(100vw * 400 / 1920);
+    right: 10%;
+    width: 32%;
 }
-#pj-banner p{
-    overflow: hidden;
-    white-space: nowrap;
-    margin-top: calc(100vw * 45 / 1920);
-    font-size: calc(100vw * 30 / 1920);
-    font-weight: 300;
+#gallery article img:nth-child(3){
+    top: calc(100vw * 1000 / 1920);
+    left: 30%;
+    width: 45%;
 }
-
-#index{
+#gallery article img:nth-child(4){
+    top: calc(100vw * 1500 / 1920);
+    left: 20%;
+    width: 30%;
+}
+#gallery article img:nth-child(5){
+    top: calc(100vw * 1900 / 1920);
+    right: 0;
+    width: 50%;
+}
+/* #index{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -147,7 +163,7 @@ header li{
     margin: 0;
     padding: 1% 0 0 1%;
     width: 20%;
-    height: calc(100vw * 50 / 1920);
+    height: calc(100vw * 52 / 1920);
     color: #fff;
     background: #000;
 }
@@ -226,7 +242,8 @@ header li{
 .bar :nth-child(2){
     height: calc(100vw * 160 / 1920);
     background: #000;
-}
+} */
+
 #resume{
     margin: calc(100vw * 200 / 1920) 0 calc(100vw * 130 / 1920) 0;
 }
@@ -304,7 +321,8 @@ header li{
     margin-top: calc(100vw * 170 / 1920);
     font-size: calc(100vw * 90 / 1920);
     color: #fff;
-    text-shadow: calc(100vw * -2 / 1920) 0 #000, 0 calc(100vw * 2 / 1920) #000, calc(100vw * 2 / 1920) 0 #000, 0 calc(100vw * -2 / 1920) #000;
+    -webkit-text-stroke: calc(100vw * 0.2 / 1920) black;
+    /* text-shadow: calc(100vw * -2 / 1920) 0 #000, 0 calc(100vw * 2 / 1920) #000, calc(100vw * 2 / 1920) 0 #000, 0 calc(100vw * -2 / 1920) #000; */
 }
 #copyright{
     display: flex;
