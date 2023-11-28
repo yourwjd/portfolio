@@ -61,6 +61,13 @@ header li{
 
 }
 
+
+#main{
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+}
+
 .flex{
     display: flex;
     flex-direction: column;
@@ -68,21 +75,16 @@ header li{
     align-items: center;
     align-content: center;
     height: 100vh;
+    background: #fff;
 }
 
-#main{
-    position: relative;
-    padding: 0 5.2083vw;
-    overflow: hidden;
-    /* cursor: none; */
-}
-#main p{
+.flex p{
     margin-bottom: -5.2083vw;
     text-align: center;
     font-family: 'Inter';
     font-size: 28rem;
-    color: #000;
-    /* -webkit-text-stroke: 0.1822vw black; */
+    color: #fff;
+    -webkit-text-stroke: 0.1822vw black;
 }
 #main p:last-child{
     margin: 0;
@@ -92,14 +94,15 @@ header li{
     position: absolute;
     top: 0;
     left: 0;
-    width: 15.625vw;
-    height: 15.625vw;
+    width: 20vw;
+    height: 20vw;
     border-radius: 50%;
-    background: #000;
+    background: #fff;
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
-  }
-
+    transition: all 0.15s ease-out;
+    z-index: 1;
+}
 
 #introduce{
     padding-top: 15.625vw;
@@ -132,7 +135,7 @@ header li{
 }
 
 #gallery{
-    padding-top: calc(100vw * 1920 / 1920);
+    padding-top: calc(100vw * 1000 / 1920);
     width: 100%;
     height: calc(100vw * 3500 / 1920);
     background-image: url(./img/projects.png);
@@ -144,12 +147,15 @@ header li{
     position: relative;
     margin: 0 5.2083vw;
 }
-#gallery article img{
+#gallery article a{
     position: absolute;
     width: 50%;
 }
+#gallery article img{
+    width: 100%;
+}
 #gallery article img:nth-child(2){
-    top: calc(100vw * 400 / 1920);
+    top: calc(100vw * 700 / 1920);
     right: 10%;
     width: 32%;
 }
