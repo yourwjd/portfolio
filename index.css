@@ -70,12 +70,28 @@ header li{
 
 .flex{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-content: center;
     height: 100vh;
     background: #fff;
+}
+
+.flex div{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    transition: all 0.1s ease;
+}
+.flex .middle span{
+    width: 0;
+    height: 100vh;
+    background: #000;
+}
+.flex .left p:first-child{
+    letter-spacing: 1vw;
+}
+.flex .right p:last-child{
+    letter-spacing: 0.8vw;
 }
 
 .flex p{
@@ -84,9 +100,10 @@ header li{
     font-family: 'Inter';
     font-size: 28rem;
     color: #fff;
+    white-space: nowrap;
     -webkit-text-stroke: 0.1822vw black;
 }
-#main p:last-child{
+.flex p:last-child{
     margin: 0;
 }
 
