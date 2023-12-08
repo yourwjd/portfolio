@@ -11,66 +11,54 @@ circle.style.top = (mouseY / window.innerHeight) * 100 + "vh";
 });
 
 //스크롤 시 텍스트 확대
-const mainZooms = document.querySelectorAll(".flex div");
 const mainLeft = document.querySelector(".flex .left");
 const mainRight = document.querySelector(".flex .right");
 
-const mainMiddle = document.querySelector(".flex .middle span"); //span
+const mainMiddle = document.querySelector(".flex .middle h3"); //span
 
 let initialZoom = 1.0;
-let targetZoom = initialZoom;
-let currentZoom = initialZoom;
-let distance = 0;
-let targetDistance = 0;
+let distanceLeft = 0;
+let distanceRight = 0;
+let targetDistanceLeft = 0;
+let targetDistanceRight = 0;
+let moveSpeedLeft = 6;  // 왼쪽 이동 속도 설정
+let moveSpeedRight = 7;  // 오른쪽 이동 속도 설정
+
+let targetZoomLeft = initialZoom;
+let targetZoomRight = initialZoom;
+let currentZoomLeft = initialZoom;
+let currentZoomRight = initialZoom;
 const zoomSpeed = 0.1;
-const moveSpeed = 3;
 
 document.addEventListener("wheel", function (e) {
     if (e.deltaY > 0) {
-        targetZoom += zoomSpeed;
-        targetDistance += moveSpeed;
-    } else if (e.deltaY < 0 && targetZoom > initialZoom) {
-        targetZoom -= zoomSpeed;
-        targetDistance -= moveSpeed;
+        targetZoomLeft += zoomSpeed;
+        targetZoomRight += zoomSpeed;
+        targetDistanceLeft -= moveSpeedLeft; 
+        targetDistanceRight += moveSpeedRight; 
+    } else if (e.deltaY < 0 && targetZoomLeft > initialZoom) {
+        targetZoomLeft -= zoomSpeed;
+        targetZoomRight -= zoomSpeed;
+        targetDistanceLeft += moveSpeedLeft; 
+        targetDistanceRight -= moveSpeedRight; 
     }
 
-    targetZoom = Math.max(targetZoom, initialZoom); //기존 스케일 유지
+    targetZoomLeft = Math.max(targetZoomLeft, initialZoom);
+    targetZoomRight = Math.max(targetZoomRight, initialZoom);
 });
 
-//휠 이벤트 부드럽게
 function update() {
-    currentZoom += (targetZoom - currentZoom) * 0.1;
-    distance += (targetDistance - distance) * 0.1;
+    currentZoomLeft += (targetZoomLeft - currentZoomLeft) * 0.1;
+    currentZoomRight += (targetZoomRight - currentZoomRight) * 0.1;
+    distanceLeft += (targetDistanceLeft - distanceLeft) * 0.1;
+    distanceRight += (targetDistanceRight - distanceRight) * 0.1;
 
-    mainZooms.forEach(mainZoom => {
-        mainZoom.style.transform = `scale(${currentZoom})`;
-    });
+    mainLeft.style.transform = `scale(${currentZoomLeft}) translateX(${distanceLeft}vw)`;
+    mainRight.style.transform = `scale(${currentZoomRight}) translateX(${distanceRight}vw)`;
 
-    mainLeft.style.transform = `scale(${currentZoom}) translateX(-${distance}vw)`;
-    mainRight.style.transform = `scale(${currentZoom}) translateX(${distance}vw)`;
-
-    mainMiddle.style.width = `${distance}vw`; //span width 조정
-
-    requestAnimationFrame(update); //화면 업데이트마다 함수 호출
+    mainMiddle.style.width = `${distanceRight - distanceLeft}vw`;
+    
+    requestAnimationFrame(update);
 }
 
 update();
-
-//스크롤 막기
-// const servey = document.querySelector('servey');
-// const serveygraph = document.querySelector('serveygraph');
-
-// serveygraph.addEventListener('wheel', function (e) {
-//     var speed = 650;  // 이동 속도
-//     var currentLeft = parseInt(window.getComputedStyle(serveygraph).left, 10);
-
-//     // serveygraph 이동 가능 범위 내에서만 serveygraph를 이동시키고 기본 스크롤 동작 방지
-//     if (e.deltaY > 0 && currentLeft > -1000) {
-//         serveygraph.style.left = Math.max(-1000, currentLeft - speed) + 'px';
-//         e.preventDefault();
-//     } else if (e.deltaY < 0 && currentLeft < 200) {
-//         serveygraph.style.left = Math.min(200, currentLeft + speed) + 'px';
-//         e.preventDefault();
-//     }
-//     // serveygraph 이동 가능 범위를 벗어나면 기본 스크롤 동작
-// }, false);
