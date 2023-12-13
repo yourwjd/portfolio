@@ -1,5 +1,6 @@
-//#main 섹션
+//header
 
+//#main 섹션
 //커서를 따라오는 마우스
 const circle = document.querySelector(".circle");
 
@@ -10,55 +11,42 @@ circle.style.left = (mouseX / window.innerWidth) * 100 + "vw";
 circle.style.top = (mouseY / window.innerHeight) * 100 + "vh";
 });
 
-//스크롤 시 텍스트 확대
-const mainLeft = document.querySelector(".flex .left");
-const mainRight = document.querySelector(".flex .right");
+//원 커지게
+window.addEventListener('scroll', function() {
+    const zoomCircle = document.querySelector('#main .zoom');
+    const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    const scrollY = (window.scrollY / viewportWidth) * 100; //scrollY vw 단위로 계산
+    let scale = 0;
 
-const mainMiddle = document.querySelector(".flex .middle h3"); //span
-
-let initialZoom = 1.0;
-let distanceLeft = 0;
-let distanceRight = 0;
-let targetDistanceLeft = 0;
-let targetDistanceRight = 0;
-let moveSpeedLeft = 6;  // 왼쪽 이동 속도 설정
-let moveSpeedRight = 7;  // 오른쪽 이동 속도 설정
-
-let targetZoomLeft = initialZoom;
-let targetZoomRight = initialZoom;
-let currentZoomLeft = initialZoom;
-let currentZoomRight = initialZoom;
-const zoomSpeed = 0.1;
-
-document.addEventListener("wheel", function (e) {
-    if (e.deltaY > 0) {
-        targetZoomLeft += zoomSpeed;
-        targetZoomRight += zoomSpeed;
-        targetDistanceLeft -= moveSpeedLeft; 
-        targetDistanceRight += moveSpeedRight; 
-    } else if (e.deltaY < 0 && targetZoomLeft > initialZoom) {
-        targetZoomLeft -= zoomSpeed;
-        targetZoomRight -= zoomSpeed;
-        targetDistanceLeft += moveSpeedLeft; 
-        targetDistanceRight -= moveSpeedRight; 
+    console.log(scrollY);
+    if (scrollY > 0 && scrollY <= 26) {
+        const progress = (scrollY) / 26;
+        scale = 0 + (6- 0) * progress;
+    } else if (scrollY > 26) {
+        scale = 10;
     }
 
-    targetZoomLeft = Math.max(targetZoomLeft, initialZoom);
-    targetZoomRight = Math.max(targetZoomRight, initialZoom);
+    zoomCircle.style.transform = `translate(-50%, -50%) scale(${scale})`;
+
+    if (scale >= 10) {
+        event.preventDefault();
+      }
+    }, { passive: false });
+
+
+//스크롤 숨기기
+const scroll = document.querySelector("#scroll");
+
+window.addEventListener("scroll", function () { 
+    let currentScrollPosition = window.scrollY;
+
+    if (currentScrollPosition === 0) { 
+        scroll.style.opacity = 1;
+        scroll.style.top = 95 + "%";
+    }
+    else if (currentScrollPosition > 0) { 
+        scroll.style.opacity = 0;
+        scroll.style.top = 100 + "%";
+    }
 });
 
-function update() {
-    currentZoomLeft += (targetZoomLeft - currentZoomLeft) * 0.1;
-    currentZoomRight += (targetZoomRight - currentZoomRight) * 0.1;
-    distanceLeft += (targetDistanceLeft - distanceLeft) * 0.1;
-    distanceRight += (targetDistanceRight - distanceRight) * 0.1;
-
-    mainLeft.style.transform = `scale(${currentZoomLeft}) translateX(${distanceLeft}vw)`;
-    mainRight.style.transform = `scale(${currentZoomRight}) translateX(${distanceRight}vw)`;
-
-    mainMiddle.style.width = `${distanceRight - distanceLeft}vw`;
-    
-    requestAnimationFrame(update);
-}
-
-update();

@@ -1,8 +1,4 @@
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-style: normal;
-}
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Noto+Sans+KR&display=swap');
 
 *{
@@ -15,7 +11,7 @@ html{
 }
 body{
     position: relative;
-    font-family: 'Pretendard-Regular';
+    font-family: 'Pretendard';
 }
 
 li{
@@ -67,50 +63,17 @@ header li{
     padding: 0;
     overflow: hidden;
     cursor: none;
-    background: #000;
+    background: #fff;
 }
 
 .flex{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
     align-items: center;
     height: 100vh;
     background: none;
-}
-
-.flex div{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    transition: all 0.1s ease;
-}
-.flex .left, .flex .right{
-    width: 50%;
-    height: 100vh;
-    background: #fff;
-}
-.flex .left{
-    padding-left: 7vw;
-}
-.flex .right{
-    padding-right: 6vw;
-}
-.flex .middle h3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 0;
-    height: 100vh;
-    /* padding-left: 4vw; */
-    background: #000;
-    color: #fff;
-}
-.flex .left p:first-child{
-    letter-spacing: 1vw;
-}
-.flex .right p:last-child{
-    letter-spacing: 0.8vw;
 }
 
 .flex p{
@@ -134,39 +97,58 @@ header li{
     height: 20vw;
     border-radius: 50%;
     background: #fff;
+    border: 0.052vw solid #fff;
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
     transition: all 0.15s ease-out;
     z-index: 1;
 }
 
+#main .zoom{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10vw;
+    height: 10vw;
+    background: #fff;
+    border-radius: 50%;
+}
+
 #introduce{
-    padding-top: 15.625vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 46.875vw;
-    text-align: center;
-    background: #000;
-    color: #fff
+    text-align: left;
+    background: #fff;
+    color: #000
 }
-#introduce h2, h3{
-    font-size: 5rem;
-}
-#introduce h3{
-    margin-bottom: 2.6041vw;
-    font-weight: 400;
+#introduce span{
+    font-size: 9rem;
 }
 #introduce h2{
-    margin-bottom: 0.7812vw;
+    font-size: 9rem;
+    font-weight: 800;
 }
 #introduce h1{
-    margin: 1.5625vw 0 3.6458vw 0;
-    font-size: 8rem;
+    margin-bottom: 1vw;
+    padding-bottom: 4vw;
+    font-size: 9rem;
+    font-weight: 800;
+    border-bottom: solid 0.2vw #000;
+}
+#skill ul{
+    display: flex;
+    justify-content: center;
 }
 #skill li{
     display: inline-block;
     margin: 0.5208vw 0.7812vw;
     padding: 0.5208vw 0.7812vw;
     font-size: 2rem;
-    border: solid 0.052vw #fff;
+    border: solid 0.052vw #000;
     border-radius: 2.6041vw;
 }
 
@@ -318,11 +300,10 @@ header li{
     flex-direction: column;
     position: fixed;
     left: 50%;
-    top: 100%;
-    padding: 2.6041vw 5.2083vw 7.8125vw 5.2083vw;
-    border: solid 0.052vw #909090;
+    top: 95%;
     border-radius: 50%;
-    transform: translate(-45%, -50%);
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
 }
 #scroll p{
     text-align: center;
