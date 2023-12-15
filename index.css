@@ -312,9 +312,27 @@ header li{
 }
 #gallery article a{
     position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
 }
-#gallery article img{
+.left img:first-child{
     height: 30vw;
+}
+.left img:last-child{
+    height: 15vw;
+    margin-left: 5vw;
+    padding: 2vw;
+    background: #fff;
+}
+.right img:last-child{
+    height: 30vw;
+}
+.right img:first-child{
+    height: 15vw;
+    margin-right: 5vw;
+    padding: 2vw;
+    background: #fff;
 }
 #gallery article a:nth-child(2){
     top: 40vw;
@@ -344,27 +362,41 @@ header li{
     margin-right: 2.6041vw;
 }
 
-.reseme-top div{
+#resume h3{
     display: flex;
-    justify-content: space-between;
-    width: 45%;
-}
-
-#resume img, #resume a{
+    justify-content: center;
+    align-items: center;
     width: 20vw;
     height: 20vw;
     border: solid 0.052vw #000;
+    font-size: 10rem;
+
 }
 #resume a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 20vw;
+    font-size: 30rem;
+    border: solid 0.052vw #000;
     background: #EEEEEE;
-    color: #fff
+    color: #000;
 }
-.reseme-top{
+
+.resume-top{
     display: flex;
     justify-content: space-between;
     align-content: flex-start;
 }
-.reseme-bottom{
+.resume-top div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.resume-bottom{
     display: flex;
     justify-content: space-between;
     margin: 2vw 0 0 29.5vw;
@@ -402,10 +434,43 @@ header li{
     margin-bottom: 5.2083vw;
 }
 .profile-text>span{
-    width: 3.9062vw;
+    position: relative;
+    width: 3vw;
     border-bottom: 0.4687vw solid #000;
     margin-bottom: 2.6041vw;
+    animation: light2 1s infinite;
 }
+.profile-text>span::before{
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(283%, -40%);
+    width: 0.4687vw;
+    height: 3vw;
+    background: #000;
+    transition: transform 0.5s ease;
+}
+
+.profile-text span.rotate::before {
+    top: 0;
+    left: 0;
+    transform: translate(283%, -40%) rotate(90deg);
+    transition: transform 0.5s ease;
+}
+
+@keyframes light2 {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .scroll-text{
     position: relative;
@@ -415,6 +480,9 @@ header li{
     height: 24.7395vw;
     font-size: 8rem;
     font-weight: 900;
+    color: #000;
+}
+.scroll-text span{
     color: #A9A9A9;
 }
 .scroll-text span:hover{
@@ -432,7 +500,7 @@ header li{
     font-size: 3rem;
     font-weight: 600;
 
-    opacity: 0;
+    display: none;
 
 }
 .scroll-text ul{

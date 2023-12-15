@@ -78,3 +78,26 @@ const options = {
     target.style.transform = 'translateY(50px)'; // 초기에는 아래로 조금 이동된 상태
     observer.observe(target); // 각 타겟에 대해 Intersection Observer를 적용함
   });
+
+
+  //#contact 섹션
+  //클릭 시 컨텐츠 변화
+  const plus = document.querySelector(".profile-text span");
+  const scrollTextDiv = document.querySelector('.scroll-text div');
+  const scrollTextH2 = document.querySelector('.scroll-text h2');
+
+  let isClicked = false;
+
+  plus.addEventListener("click", function () { 
+    if (!isClicked) {
+        scrollTextDiv.style.display = 'flex';
+        scrollTextH2.style.opacity = 0; 
+        plus.classList.add('rotate');
+        isClicked = true;
+    } else {
+        scrollTextDiv.style.display = 'none';
+        scrollTextH2.style.opacity = 1; 
+        plus.classList.remove('rotate');
+        isClicked = false;
+    }
+  });
