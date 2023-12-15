@@ -1,4 +1,39 @@
 //header
+//내비게이션 바 이동
+const headerMenu = document.querySelectorAll("header li");
+
+const project = document.querySelector("#gallery");
+const contact = document.querySelector("#contact");
+
+headerMenu[0].onclick = function (event) {
+    event.preventDefault();
+    project.scrollIntoView({ behavior: 'smooth' });
+};
+
+headerMenu[1].onclick = function (event) {
+    event.preventDefault();
+    contact.scrollIntoView({ behavior: 'smooth' });
+};
+
+//헤더 없애기
+var myHeader = document.querySelector("header"); 
+var isHeaderVisible = true; 
+var previousScrollPosition = 0;
+
+window.addEventListener("scroll", function () { 
+    var currentScrollPosition = window.scrollY; 
+    if (currentScrollPosition > previousScrollPosition && currentScrollPosition > 1100 && isHeaderVisible) { 
+        myHeader.style.top = -150 + "px";
+        isHeaderVisible = false;
+    }
+    else if ((currentScrollPosition < previousScrollPosition || currentScrollPosition <= 200) && !isHeaderVisible) { 
+        myHeader.style.top = 0; 
+        isHeaderVisible = true;
+    }
+
+    previousScrollPosition = currentScrollPosition; 
+});
+
 
 //#main 섹션
 //커서를 따라오는 마우스
