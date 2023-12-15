@@ -54,9 +54,10 @@ header ul{
 }
 header li{
     display: inline-block;
-    margin-left: 7%;
+    margin-left: 5%;
+    padding: 2%;
     font-size: 1.8rem;
-
+    cursor: pointer;
 }
 
 
